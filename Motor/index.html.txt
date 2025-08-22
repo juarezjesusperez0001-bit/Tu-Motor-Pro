@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ef233c" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Portal profesional de autos: reseñas, comparativas, buscador por marca/presupuesto, guías de compra y monetización con anuncios y afiliados." />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://www.tumotor.pro/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🏎️</text></svg>">
+  <title>TuMotor Pro — Reseñas y Comparativas de Autos 2025</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TuMotor Pro — Reseñas y Comparativas de Autos 2025" />
+  <meta property="og:description" content="Encuentra el auto ideal con nuestro buscador por marca, tipo y presupuesto. Reseñas imparciales, test de consumo y guías de compra." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tumotor.pro/" />
+  <meta property="og:image" content="https://www.tumotor.pro/og-autos.jpg" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TuMotor Pro — Reseñas y Comparativas de Autos 2025" />
+  <meta name="twitter:description" content="Comparativas, reseñas a fondo y guías de compra con datos reales." />
+  <meta name="twitter:image" content="https://www.tumotor.pro/og-autos.jpg" />
+
+  <!-- Estilos -->
+  <style>
+    :root{
+      --bg: #0b0e14;
+      --panel: #10141f;
+      --card: #0f172a;
+      --text: #e6eaf2;
+      --muted: #9aa7bd;
+      --brand: #ef233c; /* rojo deportivo */
+      --brand-2: #ff4d6d;
+      --accent: #2dd4bf; /* turquesa */
+      --ring: #94a3b8;
+      --good: #22c55e;
+      --warn: #f59e0b;
+      --bad: #ef4444;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#ffffff; --panel:#f8fafc; --card:#f3f6fb; --text:#0f172a; --muted:#52607a }
+    }
+    *{ box-sizing:border-box }
+    html,body{ height:100% }
+    body{ margin:0; font: 15px/1.65 Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Color Emoji"; background: radial-gradient(1200px 600px at 10% -10%, rgba(239,35,60,.15), transparent), var(--bg); color:var(--text) }
+    img{ max-width:100%; height:auto; display:block }
+    a{ color: var(--brand); text-decoration: none }
+    a:hover{ text-decoration: underline }
+    .container{ width:min(1200px, 92%); margin-inline:auto }
+
+    /* Header / navegación */
+    header{ position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background: color-mix(in oklab, var(--bg) 80%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--text) 12%, transparent) }
+    .nav{ display:flex; align-items:center; gap:1rem; justify-content:space-between; padding:.75rem 0 }
+    .brand{ display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.2px }
+    .logo{ width:40px; height:40px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#1a0b0d; box-shadow:0 12px 36px rgba(239,35,60,.35) }
+    .menu{ display:flex; align-items:center; gap:1rem }
+    .menu a{ color:var(--text); opacity:.9 }
+    .menu a.active{ color: var(--accent) }
+    .searchbar{ display:flex; gap:.5rem; align-items:center; background:var(--panel); border:1px solid color-mix(in oklab, var(--text) 10%, transparent); padding:.45rem .6rem; border-radius:12px }
+    .searchbar input{ background:transparent; border:0; outline:0; color:var(--text); width:220px }
+    .menu-toggle{ display:none }
+    @media (max-width:960px){
+      .menu{ display:none }
+      .menu-toggle{ display:inline-flex; align-items:center; gap:.5rem; background:transparent; border:1px solid color-mix(in oklab, var(--text) 15%, transparent); color:var(--text); padding:.45rem .8rem; border-radius:999px }
+      .menu.open{ display:flex; position:absolute; inset:auto 1rem auto auto; top:64px; background:var(--panel); border:1px solid color-mix(in oklab, var(--text) 12%, transparent); border-radius:16px; padding:.5rem; flex-direction:column }
+      .searchbar input{ width:140px }
+    }
+
+    /* Hero */
+    .hero{ padding: 42px 0 24px; display:grid; grid-template-columns: 1.2fr .8fr; gap:2rem; align-items:center }
+    .hero h1{ font-size: clamp(2rem, 2.3vw + 1.2rem, 3.1rem); line-height:1.05; margin:0 0 .6rem; letter-spacing:-.02em }
+    .sub{ color:var(--muted); max-width:65ch }
+    .cta{ display:flex; gap:.7rem; margin-top:1rem; flex-wrap:wrap }
+    .btn{ cursor:pointer; border-radius:12px; padding:.8rem 1rem; border:1px solid color-mix(in oklab, var(--text) 16%, transparent); background:transparent; color:var(--text) }
+    .btn.primary{ background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#1a0b0d; border:0; font-weight:800; box-shadow:0 10px 24px rgba(239,35,60,.35) }
+    .badges{ display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.8rem }
+    .badge{ border:1px solid color-mix(in oklab, var(--text) 12%, transparent); background:transparent; padding:.25rem .55rem; border-radius:999px; font-size:.82rem }
+
+    .card{ background: var(--panel); border:1px solid color-mix(in oklab, var(--text) 12%, transparent); border-radius:16px; padding:1rem; box-shadow:0 10px 40px rgba(0,0,0,.25) }
+    .stats{ display:grid; grid-template-columns: repeat(4, 1fr); gap:1rem; margin-top:1rem }
+    .stat{ text-align:center; border-radius:12px; padding:.8rem; background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 70%, transparent), transparent); border:1px dashed color-mix(in oklab, var(--text) 14%, transparent) }
+    .stat .n{ font-weight:800; font-size:1.4rem }
+
+    section{ padding: 26px 0 }
+
+    /* Buscador */
+    .finder{ display:grid; grid-template-columns: 1fr; gap:1rem }
+    .filters{ display:grid; grid-template-columns: repeat(4, 1fr); gap:.8rem }
+    .filters select, .filters input{ width:100%; padding:.65rem .8rem; border-radius:10px; border:1px solid color-mix(in oklab, var(--text) 14%, transparent); background: transparent; color:var(--text) }
+    .results{ display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem }
+    @media (max-width:1100px){ .results{ grid-template-columns: repeat(2,1fr) } }
+    @media (max-width:720px){ .hero{ grid-template-columns:1fr } .filters{ grid-template-columns: 1fr 1fr } .results{ grid-template-columns:1fr } }
+
+    .car{ position:relative; display:flex; flex-direction:column; gap:.5rem }
+    .car .thumb{ aspect-ratio: 16/9; overflow:hidden; border-radius:14px; background:#111827; border:1px solid color-mix(in oklab, var(--text) 10%, transparent) }
+    .car h3{ margin:.2rem 0 .1rem; font-size:1.05rem }
+    .meta{ display:flex; gap:.6rem; flex-wrap:wrap; color:var(--muted); font-size:.9rem }
+    .price{ font-weight:800 }
+    .stars{ letter-spacing: 1px }
+    .ad{ display:grid; place-items:center; min-height:120px; border:2px dashed color-mix(in oklab, var(--brand) 40%, transparent); border-radius:12px; opacity:.9; font-weight:700 }
+
+    /* Comparador */
+    .compare-bar{ position:fixed; inset:auto 0 0 0; background: color-mix(in oklab, var(--panel) 85%, transparent); border-top:1px solid color-mix(in oklab, var(--text) 12%, transparent); backdrop-filter: blur(10px); z-index:60 }
+    .compare-inner{ display:flex; align-items:center; gap:.6rem; padding:.6rem 1rem; max-width:1200px; margin:0 auto }
+    .chip{ border:1px solid color-mix(in oklab, var(--text) 14%, transparent); padding:.25rem .5rem; border-radius:999px; font-size:.85rem }
+
+    /* Noticias/Artículos */
+    .grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem }
+    .post .cover{ aspect-ratio:16/9; border-radius:14px; overflow:hidden; border:1px solid color-mix(in oklab, var(--text) 10%, transparent) }
+    @media (max-width:960px){ .grid{ grid-template-columns:1fr } }
+
+    /* Tabla comparativa */
+    table{ width:100%; border-collapse: collapse; overflow:auto }
+    th, td{ padding:.6rem .5rem; text-align:left; border-bottom:1px solid color-mix(in oklab, var(--text) 12%, transparent) }
+    th{ font-size:.92rem; color:var(--muted) }
+
+    /* Formularios */
+    form{ display:grid; gap:.5rem }
+    input, textarea, select{ width:100%; padding:.7rem .9rem; border-radius:10px; border:1px solid color-mix(in oklab, var(--text) 14%, transparent); background: transparent; color:var(--text) }
+    input:focus, textarea:focus, select:focus{ outline:2px solid color-mix(in oklab, var(--ring) 55%, transparent) }
+
+    /* Premium Pricing */
+    .pricing-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:2rem; margin-bottom:4rem }
+    .pricing-card{ position:relative; transition:all .3s ease; border:2px solid color-mix(in oklab, var(--text) 8%, transparent) }
+    .pricing-card:hover{ transform:translateY(-8px); border-color:color-mix(in oklab, var(--brand) 30%, transparent); box-shadow:0 20px 60px rgba(0,0,0,.4) }
+    .pricing-card.featured{ border-color:var(--brand); transform:scale(1.05); box-shadow:0 25px 80px rgba(239,35,60,.25) }
+    .popular-badge{ position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#fff; padding:.4rem 1rem; border-radius:999px; font-size:.85rem; font-weight:700; letter-spacing:.5px }
+    .plan-header{ text-align:center; padding-bottom:1.5rem; border-bottom:1px solid color-mix(in oklab, var(--text) 10%, transparent) }
+    .plan-header h3{ font-size:1.5rem; margin:0 0 1rem; font-weight:700 }
+    .price{ display:flex; align-items:baseline; justify-content:center; gap:.2rem; margin-bottom:.5rem }
+    .currency{ font-size:1.2rem; opacity:.8 }
+    .amount{ font-size:3rem; font-weight:800; color:var(--brand) }
+    .period{ opacity:.7 }
+    .original-price{ text-decoration:line-through; opacity:.6; font-size:.9rem }
+    .plan-features{ padding:1.5rem 0; display:grid; gap:.8rem }
+    .feature{ display:flex; align-items:center; gap:.6rem; padding:.2rem 0 }
+    .feature.disabled{ opacity:.4 }
+    .premium-cta{ width:100%; margin-top:auto; display:flex; flex-direction:column; align-items:center; gap:.2rem; padding:1rem; font-size:1rem; font-weight:700; transition:all .3s ease }
+    .premium-cta:hover{ transform:translateY(-2px); box-shadow:0 15px 35px rgba(239,35,60,.4) }
+    .premium-cta small{ font-size:.8rem; opacity:.9; font-weight:400 }
+    .current-plan{ opacity:.6; cursor:not-allowed }
+
+    .benefits-section, .testimonials-section, .faq-section{ margin:4rem 0 }
+    .benefits-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:2rem }
+    .benefit-card{ text-align:center; padding:2rem 1rem }
+    .benefit-icon{ font-size:3rem; margin-bottom:1rem }
+    .benefit-card h4{ margin:1rem 0 .5rem; font-size:1.2rem }
+    .testimonials-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem }
+    .testimonial-card{ background:color-mix(in oklab, var(--panel) 60%, transparent); padding:2rem; border-radius:16px; border:1px solid color-mix(in oklab, var(--text) 8%, transparent) }
+    .testimonial-card .stars{ color:var(--warn); margin-bottom:1rem; font-size:1.1rem }
+    .testimonial-card .author{ margin-top:1rem; opacity:.7; font-style:italic }
+    .faq-grid{ display:grid; gap:1rem; max-width:800px; margin:0 auto }
+    .faq-item details{ background:var(--panel); border:1px solid color-mix(in oklab, var(--text) 10%, transparent); border-radius:12px; padding:1rem }
+    .faq-item summary{ font-weight:600; cursor:pointer; padding:.5rem 0 }
+    .faq-item details p{ margin:.5rem 0 0; opacity:.9; line-height:1.6 }
+
+    /* Calculadora de Financiamiento */
+    .calculator-input, .calculator-results, .calculator-compare{ margin-bottom:2rem }
+    .calc-form{ display:grid; gap:1rem }
+    .form-row{ display:grid; gap:.3rem }
+    .form-row label{ font-weight:600; font-size:.9rem; color:var(--text) }
+    .form-row small{ font-size:.8rem; color:var(--muted) }
+    .calc-results{ display:grid; gap:1.5rem }
+    .main-result{ background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#fff; padding:1.5rem; border-radius:16px; text-align:center; box-shadow:0 15px 40px rgba(239,35,60,.3) }
+    .main-result .result-label{ font-size:.9rem; opacity:.9; margin-bottom:.5rem }
+    .main-result .result-value{ font-size:2.5rem; font-weight:800; margin-bottom:.3rem }
+    .main-result .result-sublabel{ font-size:.85rem; opacity:.8 }
+    .results-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1rem }
+    .result-mini{ background:var(--panel); border:1px solid color-mix(in oklab, var(--text) 10%, transparent); padding:1rem; border-radius:12px; text-align:center }
+    .result-mini .result-label{ font-size:.8rem; color:var(--muted); margin-bottom:.5rem }
+    .result-mini .result-value{ font-size:1.3rem; font-weight:700; color:var(--brand) }
+    .calc-tips{ background:color-mix(in oklab, var(--accent) 5%, transparent); border-left:4px solid var(--accent); padding:1rem; border-radius:0 8px 8px 0 }
+    .calc-tips h4{ margin:0 0 .5rem; font-size:.9rem; color:var(--accent) }
+    .calc-tips ul{ margin:.5rem 0; padding-left:1.2rem; font-size:.85rem; line-height:1.5 }
+    .table-container{ overflow-x:auto; margin-top:1rem }
+    .table-container table{ min-width:600px }
+    .compare-options{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-top:1rem }
+    .compare-scenario{ background:var(--panel); border:1px solid color-mix(in oklab, var(--text) 8%, transparent); padding:1rem; border-radius:12px; text-align:center }
+    .compare-scenario h4{ margin:0 0 .8rem; font-size:1rem; color:var(--brand) }
+    .scenario-details{ display:grid; gap:.5rem; font-size:.85rem }
+    .scenario-details .scenario-item{ display:flex; justify-content:space-between; padding:.2rem 0; border-bottom:1px dashed color-mix(in oklab, var(--text) 8%, transparent) }
+    .scenario-item:last-child{ border-bottom:0 }
+    @media (max-width:960px){ 
+      .calculator-input, .calculator-results{ grid-column:1/-1 }
+      .results-grid{ grid-template-columns:1fr }
+      .compare-options{ grid-template-columns:1fr }
+    }
+
+    /* Modal de pago */
+    .payment-modal{ display:none; position:fixed; inset:0; z-index:100; background:rgba(0,0,0,.8); backdrop-filter:blur(5px) }
+    .payment-modal.active{ display:flex; align-items:center; justify-content:center; padding:1rem }
+    .payment-content{ background:var(--bg); border:2px solid var(--brand); border-radius:20px; padding:2rem; max-width:500px; width:100%; position:relative; box-shadow:0 30px 80px rgba(0,0,0,.6) }
+    .payment-close{ position:absolute; top:1rem; right:1rem; background:transparent; border:0; color:var(--text); font-size:1.5rem; cursor:pointer; opacity:.7 }
+    .payment-close:hover{ opacity:1 }
+    .payment-header{ text-align:center; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid color-mix(in oklab, var(--text) 15%, transparent) }
+    .payment-plan{ font-size:1.5rem; font-weight:700; color:var(--brand) }
+    .payment-price{ font-size:2.5rem; font-weight:800; margin:.5rem 0 }
+    .payment-methods{ display:grid; gap:1rem; margin:2rem 0 }
+    .payment-method{ display:flex; align-items:center; gap:1rem; padding:1rem; border:2px solid color-mix(in oklab, var(--text) 12%, transparent); border-radius:12px; cursor:pointer; transition:all .3s ease }
+    .payment-method:hover, .payment-method.selected{ border-color:var(--brand); background:color-mix(in oklab, var(--brand) 5%, transparent) }
+    .payment-method-icon{ font-size:1.5rem }
+    .payment-form{ display:grid; gap:1rem }
+    .payment-form input{ padding:.8rem; border-radius:10px; border:1px solid color-mix(in oklab, var(--text) 20%, transparent); background:var(--panel) }
+    .payment-btn{ background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#fff; border:0; padding:1rem; border-radius:12px; font-weight:700; font-size:1.1rem; cursor:pointer; transition:transform .3s ease }
+    .payment-btn:hover{ transform:translateY(-2px) }
+
+    footer{ margin-top:40px; border-top:1px solid color-mix(in oklab, var(--text) 12%, transparent) }
+    .foot{ display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between; padding:1rem 0; color:var(--muted) }
+  </style>
+
+  <!-- Datos Estructurados: Organization + WebSite + SearchAction + FAQ + ItemList (Top autos) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"TuMotor Pro",
+    "url":"https://www.tumotor.pro/",
+    "logo":"https://www.tumotor.pro/logo.png",
+    "sameAs":["https://www.instagram.com/tumotorpro","https://www.youtube.com/@tumotorpro"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"TuMotor Pro",
+    "url":"https://www.tumotor.pro/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.tumotor.pro/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Principal">
+      <div class="brand" aria-label="TuMotor Pro">
+        <div class="logo" aria-hidden="true">🏎️</div>
+        <span>TuMotor Pro</span>
+      </div>
+      <nav class="menu" id="menu">
+        <a href="#buscador" class="active">Buscador</a>
+        <a href="#comparativas">Comparativas</a>
+        <a href="#calculadora">🧮 Calculadora</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#guias">Guías de compra</a>
+        <a href="#premium" style="color:var(--brand); font-weight:700">🏆 Premium</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn" href="#suscribir">Suscríbete</a>
+      </nav>
+      <div class="searchbar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/></svg>
+        <input id="q" placeholder="Buscar modelo, marca, tipo…" autocomplete="off" />
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menu">☰ Menú</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container">
+      <div>
+        <h1>Encuentra el <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">auto ideal</span> con datos reales y comparativas imparciales</h1>
+        <p class="sub">Buscador por marca, tipo y presupuesto. Reseñas a fondo, test de consumo, seguridad y costo de mantenimiento. Monetización lista (ads + afiliados + membresía premium).</p>
+        <div class="cta">
+          <a href="#buscador" class="btn primary">Probar buscador</a>
+          <a href="#comparativas" class="btn">Ver comparativas</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Euro NCAP ★★★★☆</span>
+          <span class="badge">Consumo WLTP</span>
+          <span class="badge">Garantía 5 años</span>
+        </div>
+        <div class="stats" aria-label="Estadísticas destacadas">
+          <div class="stat"><div class="n">+250</div><div class="muted">Modelos indexados</div></div>
+          <div class="stat"><div class="n" id="suscritos">12,340</div><div class="muted">Suscriptores</div></div>
+          <div class="stat"><div class="n">98</div><div class="muted">Lighthouse (CWV)</div></div>
+          <div class="stat"><div class="n">0.6s</div><div class="muted">TTFB (CDN)</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Oferta destacada</h3>
+        <p class="muted">Accesorios recomendados (afiliados)</p>
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="ad">Banner 300×250</div>
+          <div class="ad">Banner 300×250</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSCADOR AVANZADO -->
+    <section class="container" id="buscador">
+      <h2>Buscador por marca, tipo y presupuesto</h2>
+      <div class="finder card">
+        <div class="filters">
+          <select id="fMarca" aria-label="Marca">
+            <option value="">Marca</option>
+          </select>
+          <select id="fTipo" aria-label="Tipo">
+            <option value="">Tipo</option>
+            <option>Sedan</option>
+            <option>SUV</option>
+            <option>Hatchback</option>
+            <option>Pickup</option>
+            <option>Deportivo</option>
+            <option>Eléctrico</option>
+            <option>Híbrido</option>
+          </select>
+          <select id="fCombustible" aria-label="Combustible">
+            <option value="">Combustible</option>
+            <option>Gasolina</option>
+            <option>Diésel</option>
+            <option>Híbrido</option>
+            <option>Eléctrico</option>
+          </select>
+          <input id="fPrecio" type="number" inputmode="numeric" placeholder="Presupuesto máx (USD)" aria-label="Presupuesto máximo" />
+        </div>
+        <div class="results" id="results" role="list"></div>
+      </div>
+    </section>
+
+    <!-- COMPARADOR -->
+    <section class="container" id="comparativas">
+      <h2>Comparativas rápidas</h2>
+      <div class="card">
+        <table aria-label="Tabla comparativa">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>0–100 km/h</th>
+              <th>Consumo (km/l)</th>
+              <th>Maletero (L)</th>
+              <th>Seguridad</th>
+            </tr>
+          </thead>
+          <tbody id="cmpTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- NOTICIAS / ARTÍCULOS -->
+    <section class="container" id="noticias">
+      <h2>Noticias & artículos</h2>
+      <div class="grid" role="list" id="posts"></div>
+    </section>
+
+    <!-- CALCULADORA DE FINANCIAMIENTO -->
+    <section class="container" id="calculadora" aria-labelledby="calculadora-heading">
+      <h2 id="calculadora-heading">🧮 Calculadora de Financiamiento</h2>
+      <p class="sub" style="text-align:center; margin-bottom:2rem">Calcula pagos mensuales, intereses y encuentra la mejor opción de financiamiento</p>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem; margin-bottom:2rem">
+        <div class="card calculator-input">
+          <h3 style="margin-top:0; display:flex; align-items:center; gap:.5rem">
+            💰 Datos del Financiamiento
+          </h3>
+
+          <form class="calc-form" id="financeForm">
+            <div class="form-row">
+              <label for="precioAuto">Precio del auto (USD)</label>
+              <input type="number" id="precioAuto" value="25000" min="1000" max="200000" step="1000" required />
+            </div>
+
+            <div class="form-row">
+              <label for="enganche">Enganche (USD)</label>
+              <input type="number" id="enganche" value="5000" min="0" step="500" required />
+              <small class="muted">Recomendado: 20% = $<span id="engancheRecomendado">5000</span></small>
+            </div>
+
+            <div class="form-row">
+              <label for="plazoMeses">Plazo (meses)</label>
+              <select id="plazoMeses" required>
+                <option value="12">12 meses</option>
+                <option value="24">24 meses</option>
+                <option value="36" selected>36 meses</option>
+                <option value="48">48 meses</option>
+                <option value="60">60 meses</option>
+                <option value="72">72 meses</option>
+                <option value="84">84 meses</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="tasaInteres">Tasa de interés anual (%)</label>
+              <input type="number" id="tasaInteres" value="8.5" min="0" max="30" step="0.1" required />
+              <small class="muted">Promedio actual: 7.5% - 12%</small>
+            </div>
+
+            <div class="form-row">
+              <label for="seguroMensual">Seguro mensual (USD)</label>
+              <input type="number" id="seguroMensual" value="150" min="0" step="10" />
+            </div>
+
+            <button type="button" class="btn primary" id="calcularBtn" style="width:100%; margin-top:1rem">
+              🔢 Calcular Financiamiento
+            </button>
+          </form>
+        </div>
+
+        <div class="card calculator-results">
+          <h3 style="margin-top:0; display:flex; align-items:center; gap:.5rem">
+            📊 Resultados del Cálculo
+          </h3>
+
+          <div id="resultados" class="calc-results">
+            <div class="result-card main-result">
+              <div class="result-label">Pago mensual</div>
+              <div class="result-value" id="pagoMensual">$0</div>
+              <div class="result-sublabel">Sin seguro: <span id="pagoSinSeguro">$0</span></div>
+            </div>
+
+            <div class="results-grid">
+              <div class="result-mini">
+                <div class="result-label">Monto financiado</div>
+                <div class="result-value" id="montoFinanciado">$0</div>
+              </div>
+              <div class="result-mini">
+                <div class="result-label">Total de intereses</div>
+                <div class="result-value" id="totalIntereses">$0</div>
+              </div>
+              <div class="result-mini">
+                <div class="result-label">Total a pagar</div>
+                <div class="result-value" id="totalPagar">$0</div>
+              </div>
+              <div class="result-mini">
+                <div class="result-label">Costo total del auto</div>
+                <div class="result-value" id="costoTotal">$0</div>
+              </div>
+            </div>
+
+            <div class="calc-tips">
+              <h4>💡 Consejos de financiamiento</h4>
+              <div id="consejos"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla de amortización -->
+      <div class="card" id="tablaAmortizacion" style="display:none">
+        <h3 style="display:flex; align-items:center; justify-content:space-between">
+          📅 Tabla de Amortización
+          <button class="btn" id="toggleTabla">Ver tabla completa</button>
+        </h3>
+        <div class="table-container">
+          <table id="amortizationTable">
+            <thead>
+              <tr>
+                <th>Pago #</th>
+                <th>Pago mensual</th>
+                <th>Capital</th>
+                <th>Interés</th>
+                <th>Saldo restante</th>
+              </tr>
+            </thead>
+            <tbody id="amortizationBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Comparador de opciones -->
+      <div class="card calculator-compare">
+        <h3>⚖️ Comparador de Opciones</h3>
+        <p class="muted">Compara diferentes escenarios de financiamiento</p>
+        <div class="compare-options" id="compareOptions">
+          <div class="compare-scenario">
+            <h4>Opción conservadora</h4>
+            <div class="scenario-details" id="conservador"></div>
+          </div>
+          <div class="compare-scenario">
+            <h4>Opción balanceada</h4>
+            <div class="scenario-details" id="balanceado"></div>
+          </div>
+          <div class="compare-scenario">
+            <h4>Opción agresiva</h4>
+            <div class="scenario-details" id="agresivo"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUÍAS DE COMPRA -->
+    <section class="container" id="guias">
+      <h2>Guías de compra</h2>
+      <div class="grid">
+        <article class="card post">
+          <div class="cover"><img loading="lazy" alt="Guía auto usado" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360'%3E%3Crect width='100%25' height='100%25' fill='%2310141f'/%3E%3C/svg%3E"></div>
+          <h3>Cómo comprar un auto usado sin sorpresas</h3>
+          <p class="muted">Checklist legal, mecánico y de historial. Incluye plantilla de inspección descargable.</p>
+        </article>
+        <article class="card post">
+          <div class="cover"><img loading="lazy" alt="Seguro de auto" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360'%3E%3Crect width='100%25' height='100%25' fill='%2310141f'/%3E%3C/svg%3E"></div>
+          <h3>Seguro de auto: coberturas y cómo ahorrar</h3>
+          <p class="muted">Guía para elegir aseguradora, deducibles y beneficios reales.</p>
+        </article>
+        <article class="card post">
+          <div class="cover"><img loading="lazy" alt="Mantenimiento preventivo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360'%3E%3Crect width='100%25' height='100%25' fill='%2310141f'/%3E%3C/svg%3E"></div>
+          <h3>Mantenimiento preventivo: lo esencial</h3>
+          <p class="muted">Calendario por kilometraje, costos estimados y tips para extender la vida útil.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MEMBRESÍA PREMIUM -->
+    <section class="container" id="premium" aria-labelledby="premium-heading">
+      <h2 id="premium-heading">TuMotor Pro Premium</h2>
+      <p class="sub" style="text-align:center; margin-bottom:3rem">Accede a contenido exclusivo, comparativas avanzadas y herramientas profesionales</p>
+
+      <div class="pricing-grid">
+        <!-- Plan Básico -->
+        <div class="card pricing-card">
+          <div class="plan-header">
+            <h3>Básico</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">0</span>
+              <span class="period">/mes</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <div class="feature">✓ Buscador básico</div>
+            <div class="feature">✓ 3 comparativas/mes</div>
+            <div class="feature">✓ Artículos gratuitos</div>
+            <div class="feature">✓ Newsletter semanal</div>
+            <div class="feature disabled">✗ Alertas de precios</div>
+            <div class="feature disabled">✗ Historial de precios</div>
+            <div class="feature disabled">✗ Análisis técnicos</div>
+          </div>
+          <button class="btn current-plan" data-plan="basic" disabled>Plan Actual</button>
+        </div>
+
+        <!-- Plan Pro -->
+        <div class="card pricing-card featured">
+          <div class="popular-badge">MÁS POPULAR</div>
+          <div class="plan-header">
+            <h3>Pro</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">9.99</span>
+              <span class="period">/mes</span>
+            </div>
+            <div class="original-price">$14.99</div>
+          </div>
+          <div class="plan-features">
+            <div class="feature">✓ Todo del plan Básico</div>
+            <div class="feature">✓ Comparativas ilimitadas</div>
+            <div class="feature">✓ Alertas de precios personalizadas</div>
+            <div class="feature">✓ Historial de precios 12 meses</div>
+            <div class="feature">✓ Análisis técnicos detallados</div>
+            <div class="feature">✓ Calculadora de financiamiento</div>
+            <div class="feature">✓ Sin anuncios</div>
+          </div>
+          <button class="btn primary premium-cta" data-plan="pro" data-price="9.99">
+            <span>Elegir Pro - 33% OFF</span>
+            <small>Facturación mensual</small>
+          </button>
+        </div>
+
+        <!-- Plan Expert -->
+        <div class="card pricing-card">
+          <div class="plan-header">
+            <h3>Expert</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount">19.99</span>
+              <span class="period">/mes</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <div class="feature">✓ Todo del plan Pro</div>
+            <div class="feature">✓ Consultoría personalizada 1:1</div>
+            <div class="feature">✓ Acceso a webinars exclusivos</div>
+            <div class="feature">✓ Reportes de mercado mensual</div>
+            <div class="feature">✓ API de datos técnicos</div>
+            <div class="feature">✓ Comunidad VIP Discord</div>
+            <div class="feature">✓ Garantía de mejor precio</div>
+          </div>
+          <button class="btn premium-cta" data-plan="expert" data-price="19.99">
+            <span>Elegir Expert</span>
+            <small>Facturación mensual</small>
+          </button>
+        </div>
+      </div>
+
+      <!-- Beneficios adicionales -->
+      <div class="benefits-section">
+        <h3 style="text-align:center; margin: 3rem 0 1.5rem">¿Por qué elegir Premium?</h3>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">📊</div>
+            <h4>Datos en tiempo real</h4>
+            <p>Precios actualizados cada hora, alertas instantáneas y análisis de tendencias del mercado.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🔍</div>
+            <h4>Búsquedas avanzadas</h4>
+            <p>Filtros por financiamiento, seguros, costo de mantenimiento y depreciación proyectada.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">💡</div>
+            <h4>Recomendaciones IA</h4>
+            <p>Algoritmo que aprende de tus preferencias para sugerir el auto perfecto para ti.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🛡️</div>
+            <h4>Garantía de compra</h4>
+            <p>Si no quedas satisfecho en 30 días, te devolvemos el 100% de tu dinero.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonios -->
+      <div class="testimonials-section">
+        <h3 style="text-align:center; margin: 3rem 0 1.5rem">Lo que dicen nuestros usuarios Premium</h3>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Las alertas de precios me ahorraron $3,000 en la compra de mi RAV4. El plan Pro se pagó solo."</p>
+            <div class="author">— Carlos M., México DF</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Los análisis técnicos son increíbles. Evité comprar un auto con problemas conocidos de transmisión."</p>
+            <div class="author">— Ana L., Guadalajara</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"La consultoría personalizada del plan Expert me ayudó a negociar el mejor precio posible."</p>
+            <div class="author">— Roberto S., Monterrey</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Premium -->
+      <div class="faq-section">
+        <h3 style="text-align:center; margin: 3rem 0 1.5rem">Preguntas Frecuentes</h3>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <details>
+              <summary>¿Puedo cancelar en cualquier momento?</summary>
+              <p>Sí, puedes cancelar tu suscripción en cualquier momento desde tu perfil. No hay permanencia mínima.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>¿Hay descuento por pago anual?</summary>
+              <p>Sí, con el pago anual obtienes 2 meses gratis. El plan Pro anual cuesta $99.99 (ahorro de $20).</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>¿Qué métodos de pago aceptan?</summary>
+              <p>Aceptamos tarjetas de crédito/débito, PayPal, OXXO, y transferencias bancarias.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>¿Los precios incluyen IVA?</summary>
+              <p>Los precios mostrados no incluyen IVA. Se agregará el impuesto correspondiente según tu ubicación.</p>
+            </details>
+          </div>
+        </div>
+        </div>
+        </section>
+    <!-- NEWSLETTER -->
+    <section class="container" id="suscribir" aria-labelledby="suscribir-heading">
+      <h2 id="suscribir-heading">Suscríbete al boletín</h2>
+      <form id="formNewsletter" novalidate class="card">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="tu@email.com" autocomplete="email" required />
+        <button class="btn primary" type="submit">Suscribirme</button>
+        <small class="muted" id="msg"></small>
+      </form>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="container" id="contacto">
+      <h2>Contacto</h2>
+      <form id="formContacto" novalidate class="card">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" placeholder="Tu nombre" required />
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="¿En qué te ayudo?" rows="4" required></textarea>
+        <button class="btn" type="submit">Enviar</button>
+        <small class="muted" id="msgContacto"></small>
+      </form>
+    </section>
+  </main>
+
+  <!-- Barra comparador -->
+  <div class="compare-bar" aria-live="polite">
+    <div class="compare-inner">
+      <strong>Comparador:</strong>
+      <div id="cmpChips" style="display:flex; gap:.4rem; flex-wrap:wrap"></div>
+      <button class="btn" id="clearCmp">Limpiar</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container foot">
+      <div>© <span id="year"></span> TuMotor Pro. Todos los derechos reservados.</div>
+      <div>
+        <a href="/privacidad">Privacidad</a> ·
+        <a href="/terminos">Términos</a> ·
+        <a href="mailto:hola@tumotor.pro">hola@tumotor.pro</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Pago -->
+  <div class="payment-modal" id="paymentModal">
+    <div class="payment-content">
+      <button class="payment-close" id="closePayment">&times;</button>
+      <div class="payment-header">
+        <div class="payment-plan" id="selectedPlan">Plan Pro</div>
+        <div class="payment-price" id="selectedPrice">$9.99/mes</div>
+        <p style="opacity:.8; margin:0">Facturación mensual • Cancela cuando quieras</p>
+      </div>
+
+      <div class="payment-methods">
+        <div class="payment-method selected" data-method="card">
+          <span class="payment-method-icon">💳</span>
+          <div>
+            <strong>Tarjeta de Crédito/Débito</strong>
+            <div style="font-size:.9rem; opacity:.7">Visa, Mastercard, American Express</div>
+          </div>
+        </div>
+        <div class="payment-method" data-method="paypal">
+          <span class="payment-method-icon">🅿️</span>
+          <div>
+            <strong>PayPal</strong>
+            <div style="font-size:.9rem; opacity:.7">Pago seguro con tu cuenta PayPal</div>
+          </div>
+        </div>
+        <div class="payment-method" data-method="oxxo">
+          <span class="payment-method-icon">🏪</span>
+          <div>
+            <strong>OXXO</strong>
+            <div style="font-size:.9rem; opacity:.7">Paga en efectivo en cualquier OXXO</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="payment-form" id="paymentForm">
+        <input type="email" placeholder="Email de confirmación" required />
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem">
+          <input type="text" placeholder="Nombre completo" required />
+          <input type="text" placeholder="Teléfono" required />
+        </div>
+        <div id="cardFields">
+          <input type="text" placeholder="Número de tarjeta" pattern="[0-9\s]{13,19}" required />
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem">
+            <input type="text" placeholder="MM/AA" pattern="[0-9]{2}/[0-9]{2}" required />
+            <input type="text" placeholder="CVV" pattern="[0-9]{3,4}" required />
+          </div>
+        </div>
+
+        <div style="display:flex; gap:.5rem; align-items:center; margin:1rem 0">
+          <input type="checkbox" id="terms" required />
+          <label for="terms" style="font-size:.9rem; opacity:.9">
+            Acepto los <a href="/terminos" style="color:var(--brand)">términos y condiciones</a> 
+            y la <a href="/privacidad" style="color:var(--brand)">política de privacidad</a>
+          </label>
+        </div>
+
+        <button type="submit" class="payment-btn">
+          🔒 Suscribirme Ahora - <span id="finalPrice">$9.99/mes</span>
+        </button>
+
+        <div style="text-align:center; margin-top:1rem; font-size:.85rem; opacity:.7">
+          🛡️ Pago seguro con SSL • 💰 Garantía de 30 días • ❌ Cancela cuando quieras
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Analytics mínimo (no bloqueante) -->
+  <script>
+    window.analyticsQueue = [];
+    function track(evt, data){ analyticsQueue.push({evt, data, t: Date.now()}); }
+    document.addEventListener('click', (e)=>{
+      const el = e.target.closest('[data-track]');
+      if(el){ track(el.dataset.track, {id: el.dataset.id}); }
+    });
+  </script>
+
+  <!-- Auto-Refresh (desactiva en producción) -->
+  <script>
+    (function autoRefresh(){
+      const ENABLED = true; // ← cambia a false en producción
+      const INTERVAL_MS = 3000;
+      const TARGET = location.href;
+      let lastTag = null, lastMod = null;
+      async function check(){
+        try{
+          const res = await fetch(TARGET, { method:'HEAD', cache:'no-store' });
+          const etag = res.headers.get('ETag');
+          const lm = res.headers.get('Last-Modified');
+          if(lastTag === null && lastMod === null){ lastTag = etag; lastMod = lm; return; }
+          if((etag && lastTag && etag !== lastTag) || (lm && lastMod && lm !== lastMod)){
+            console.log('[AutoRefresh] Cambio detectado. Recargando…');
+            location.reload();
+          }
+        }catch(err){}
+      }
+      if(ENABLED){ setInterval(check, INTERVAL_MS); }
+    })();
+  </script>
+
+  <!-- Datos simulados + Render -->
+  <script>
+    const CARS = [
+      { id:'mx5', marca:'Mazda', modelo:'MX-5 Miata', tipo:'Deportivo', combustible:'Gasolina', precio:32000, img:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop', estrellas:4.7, ceroCien:6.5, consumo:15.5, maletero:130, seguridad:'★★★★☆' },
+      { id:'civic', marca:'Honda', modelo:'Civic', tipo:'Sedan', combustible:'Gasolina', precio:27000, img:'https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop', estrellas:4.6, ceroCien:7.8, consumo:18, maletero:420, seguridad:'★★★★★' },
+      { id:'model3', marca:'Tesla', modelo:'Model 3', tipo:'Eléctrico', combustible:'Eléctrico', precio:39990, img:'https://images.unsplash.com/photo-1511391025905-0ac2e3c66f52?q=80&w=1200&auto=format&fit=crop', estrellas:4.5, ceroCien:5.8, consumo:0, maletero:425, seguridad:'★★★★★' },
+      { id:'rav4', marca:'Toyota', modelo:'RAV4 Hybrid', tipo:'SUV', combustible:'Híbrido', precio:36000, img:'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=1200&auto=format&fit=crop', estrellas:4.6, ceroCien:8.1, consumo:20, maletero:580, seguridad:'★★★★★' },
+      { id:'rang', marca:'Ford', modelo:'Ranger', tipo:'Pickup', combustible:'Diésel', precio:42000, img:'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop', estrellas:4.3, ceroCien:9.2, consumo:12, maletero:950, seguridad:'★★★★☆' },
+      { id:'gti', marca:'Volkswagen', modelo:'Golf GTI', tipo:'Hatchback', combustible:'Gasolina', precio:35000, img:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop', estrellas:4.4, ceroCien:6.4, consumo:14, maletero:380, seguridad:'★★★★☆' }
+    ];
+
+    const POSTS = [
+      { id:'p1', title:'Los 7 autos con mejor relación valor/precio en 2025', excerpt:'Comparamos equipamiento, seguridad y depreciación.', cover:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop' },
+      { id:'p2', title:'Híbrido vs. Eléctrico: ¿qué te conviene?', excerpt:'Costos de mantenimiento, autonomías y carga en casa.', cover:'https://images.unsplash.com/photo-1511391025905-0ac2e3c66f52?q=80&w=1200&auto=format&fit=crop' },
+      { id:'p3', title:'Seguro de auto: 10 tips para pagar menos', excerpt:'Coberturas, deducibles y comparadores confiables.', cover:'https://images.unsplash.com/photo-1601925260348-9fd7431abfad?q=80&w=1200&auto=format&fit=crop' }
+    ];
+
+    // UI helpers
+    const el = (sel, root=document) => root.querySelector(sel);
+    const els = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    // Poblado de filtros
+    const marcas = [...new Set(CARS.map(c=>c.marca))];
+    const marcaSel = el('#fMarca');
+    marcaSel.innerHTML += marcas.map(m=>`<option>${m}</option>`).join('');
+
+    function formatUSD(n){ return new Intl.NumberFormat('es-MX', {style:'currency', currency:'USD', maximumFractionDigits:0}).format(n); }
+
+    // Render de tarjetas de autos
+    const results = el('#results');
+    const cmpChips = el('#cmpChips');
+    const cmpTable = el('#cmpTable');
+    const cmpSet = new Set();
+
+    function starString(n){ const s = Math.round(n); return '★'.repeat(Math.min(5, Math.max(0, s))) + '☆'.repeat(5 - Math.min(5, Math.max(0, s))); }
+
+    function renderCars(list){
+      results.innerHTML = list.map(c=>`
+        <article class="card car" role="listitem">
+          <div class="thumb">
+            <img loading="lazy" alt="${c.marca} ${c.modelo}" src="${c.img}" />
+          </div>
+          <h3>${c.marca} ${c.modelo}</h3>
+          <div class="meta">
+            <span class="chip">${c.tipo}</span>
+            <span class="chip">${c.combustible}</span>
+            <span class="chip price">${formatUSD(c.precio)}</span>
+            <span class="stars" aria-label="${c.estrellas} de 5">${starString(c.estrellas)}</span>
+          </div>
+          <div style="display:flex; gap:.5rem; margin-top:.4rem">
+            <button class="btn" data-track="affiliate_click" data-id="${c.id}">Ver oferta</button>
+            <button class="btn primary" data-addcmp="${c.id}">Comparar</button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function applyFilters(){
+      const q = el('#q').value.toLowerCase().trim();
+      const m = el('#fMarca').value;
+      const t = el('#fTipo').value;
+      const f = el('#fCombustible').value;
+      const p = parseFloat(el('#fPrecio').value || '0');
+      const out = CARS.filter(c=>
+        (!m || c.marca===m) &&
+        (!t || c.tipo===t) &&
+        (!f || c.combustible===f) &&
+        (!p || c.precio <= p) &&
+        (!q || `${c.marca} ${c.modelo} ${c.tipo} ${c.combustible}`.toLowerCase().includes(q))
+      );
+      renderCars(out);
+    }
+
+    ['#q','#fMarca','#fTipo','#fCombustible','#fPrecio'].forEach(sel=>{
+      el(sel).addEventListener('input', applyFilters);
+      el(sel).addEventListener('change', applyFilters);
+    });
+
+    // Comparador
+    function renderCmp(){
+      const arr = CARS.filter(c=>cmpSet.has(c.id));
+      cmpChips.innerHTML = arr.map(c=>`<span class="chip">${c.marca} ${c.modelo}</span>`).join('');
+      cmpTable.innerHTML = arr.map(c=>`
+        <tr>
+          <td>${c.marca} ${c.modelo}</td>
+          <td>${c.ceroCien}s</td>
+          <td>${c.consumo || '—'}</td>
+          <td>${c.maletero}L</td>
+          <td>${c.seguridad}</td>
+        </tr>
+      `).join('');
+    }
+
+    results.addEventListener('click', (e)=>{
+      const btn = e.target.closest('[data-addcmp]');
+      if(btn){ cmpSet.add(btn.dataset.addcmp); renderCmp(); }
+    });
+    el('#clearCmp').addEventListener('click', ()=>{ cmpSet.clear(); renderCmp(); });
+
+    // Noticias
+    const posts = el('#posts');
+    posts.innerHTML = POSTS.map(p=>`
+      <article class="card post" role="listitem">
+        <div class="cover"><img loading="lazy" alt="${p.title}" src="${p.cover}"></div>
+        <h3>${p.title}</h3>
+        <p class="muted">${p.excerpt}</p>
+        <div style="display:flex; gap:.5rem"><button class="btn" data-track="read_post" data-id="${p.id}">Leer</button><button class="btn primary" data-track="subscribe_cta" data-id="${p.id}">Suscribirme</button></div>
+      </article>
+    `).join('');
+    // Funcionalidad del menú móvil
+      document.getElementById('menuToggle').addEventListener('click', function() {
+        const menu = document.getElementById('menu');
+        const isOpen = menu.classList.contains('open');
+
+        if (isOpen) {
+          menu.classList.remove('open');
+          this.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Funcionalidad de navegación suave
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+
+            // Cerrar menú móvil si está abierto
+            const menu = document.getElementById('menu');
+            const menuToggle = document.getElementById('menuToggle');
+            if (menu.classList.contains('open')) {
+              menu.classList.remove('open');
+              menuToggle.setAttribute('aria-expanded', 'false');
+            }
+
+            // Actualizar enlace activo
+            document.querySelectorAll('.menu a').forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+          }
+        });
+      });
+
+      // Funcionalidad de botones "Ver oferta" (simulación de enlaces de afiliados)
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('[data-track="affiliate_click"]')) {
+          const carId = e.target.closest('[data-track="affiliate_click"]').dataset.id;
+          const car = CARS.find(c => c.id === carId);
+          if (car) {
+            // Simulación de redirección a página de afiliado
+            alert(`Redirigiendo a la oferta de ${car.marca} ${car.modelo}...`);
+            // En producción, aquí irías a la URL del afiliado:
+            // window.open('https://affiliatelink.com/car/' + carId, '_blank');
+          }
+        }
+
+        // Funcionalidad de botones "Leer" en artículos
+        if (e.target.closest('[data-track="read_post"]')) {
+          const postId = e.target.closest('[data-track="read_post"]').dataset.id;
+          const post = POSTS.find(p => p.id === postId);
+          if (post) {
+            alert(`Abriendo artículo: ${post.title}`);
+            // En producción, aquí navegarías al artículo completo:
+            // window.location.href = '/articulo/' + postId;
+          }
+        }
+
+        // Funcionalidad de botones "Suscribirme" en artículos
+        if (e.target.closest('[data-track="subscribe_cta"]')) {
+          document.getElementById('suscribir').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          document.getElementById('email').focus();
+        }
+      });
+
+      // Funcionalidad de búsqueda en tiempo real
+      document.getElementById('q').addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') {
+          // Scroll al buscador si no está visible
+          document.getElementById('buscador').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+
+    // Funcionalidad Premium y Pago
+    const paymentModal = document.getElementById('paymentModal');
+    const selectedPlanEl = document.getElementById('selectedPlan');
+    const selectedPriceEl = document.getElementById('selectedPrice');
+    const finalPriceEl = document.getElementById('finalPrice');
+    const cardFields = document.getElementById('cardFields');
+
+    // Manejo de clics en botones premium
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.premium-cta')) {
+        const btn = e.target.closest('.premium-cta');
+        const plan = btn.dataset.plan;
+        const price = btn.dataset.price;
+
+        // Configurar modal según el plan seleccionado
+        const planNames = { 
+          pro: 'Plan Pro', 
+          expert: 'Plan Expert' 
+        };
+
+        selectedPlanEl.textContent = planNames[plan];
+        selectedPriceEl.textContent = `$${price}/mes`;
+        finalPriceEl.textContent = `$${price}/mes`;
+
+        // Mostrar modal
+        paymentModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Track evento
+        track('premium_click', { plan, price });
+      }
+    });
+
+    // Cerrar modal
+    document.getElementById('closePayment').addEventListener('click', () => {
+      paymentModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    // Cerrar modal al hacer clic fuera
+    paymentModal.addEventListener('click', (e) => {
+      if (e.target === paymentModal) {
+        paymentModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Manejar métodos de pago
+    document.querySelectorAll('.payment-method').forEach(method => {
+      method.addEventListener('click', () => {
+        // Remover selección anterior
+        document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+        // Seleccionar actual
+        method.classList.add('selected');
+
+        const methodType = method.dataset.method;
+
+        // Mostrar/ocultar campos según método
+        if (methodType === 'card') {
+          cardFields.style.display = 'block';
+        } else {
+          cardFields.style.display = 'none';
+        }
+      });
+    });
+
+    // Procesar pago
+    document.getElementById('paymentForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const selectedMethod = document.querySelector('.payment-method.selected').dataset.method;
+      const formData = new FormData(e.target);
+
+      // Simulación de procesamiento
+      const btn = e.target.querySelector('.payment-btn');
+      const originalText = btn.innerHTML;
+
+      btn.innerHTML = '⏳ Procesando...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        // Simular respuesta exitosa
+        alert(`¡Pago procesado exitosamente!\n\nMétodo: ${selectedMethod}\nPlan: ${selectedPlanEl.textContent}\nPrecio: ${selectedPriceEl.textContent}\n\nRecibirás un email de confirmación en breve.`);
+
+        // Track conversión
+        track('premium_purchase', { 
+          plan: selectedPlanEl.textContent, 
+          price: selectedPriceEl.textContent,
+          method: selectedMethod 
+        });
+
+        // Cerrar modal
+        paymentModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+
+        // Reset formulario
+        e.target.reset();
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+
+        // En producción, aquí integrarías con Stripe, PayPal, etc.
+        // window.location.href = '/dashboard?upgraded=true';
+
+      }, 2000);
+    });
+
+    // Formatear número de tarjeta mientras se escribe
+    document.addEventListener('input', (e) => {
+      if (e.target.placeholder === 'Número de tarjeta') {
+        let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+        let matches = value.match(/\d{4,16}/g);
+        let match = matches && matches[0] || '';
+        let parts = [];
+        for (let i = 0, len = match.length; i < len; i += 4) {
+          parts.push(match.substring(i, i + 4));
+        }
+        if (parts.length) {
+          e.target.value = parts.join(' ');
+        } else {
+          e.target.value = value;
+        }
+      }
+
+      if (e.target.placeholder === 'MM/AA') {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length >= 2) {
+          value = value.substring(0, 2) + '/' + value.substring(2, 4);
+        }
+        e.target.value = value;
+      }
+    });
+
+    // Calculadora de Financiamiento
+    class FinanceCalculator {
+      constructor() {
+        this.form = document.getElementById('financeForm');
+        this.initEventListeners();
+        this.calculate(); // Cálculo inicial
+      }
+
+      initEventListeners() {
+        // Actualizar cálculos en tiempo real
+        ['precioAuto', 'enganche', 'plazoMeses', 'tasaInteres', 'seguroMensual'].forEach(id => {
+          document.getElementById(id).addEventListener('input', () => this.calculate());
+        });
+
+        // Botón calcular
+        document.getElementById('calcularBtn').addEventListener('click', () => this.calculate());
+
+        // Toggle tabla de amortización
+        document.getElementById('toggleTabla').addEventListener('click', () => this.toggleAmortization());
+
+        // Actualizar enganche recomendado
+        document.getElementById('precioAuto').addEventListener('input', (e) => {
+          const precio = parseFloat(e.target.value) || 0;
+          const recomendado = Math.round(precio * 0.2);
+          document.getElementById('engancheRecomendado').textContent = recomendado.toLocaleString();
+        });
+      }
+
+      calculate() {
+        const precio = parseFloat(document.getElementById('precioAuto').value) || 0;
+        const enganche = parseFloat(document.getElementById('enganche').value) || 0;
+        const meses = parseInt(document.getElementById('plazoMeses').value) || 36;
+        const tasaAnual = parseFloat(document.getElementById('tasaInteres').value) || 8.5;
+        const seguro = parseFloat(document.getElementById('seguroMensual').value) || 0;
+
+        if (precio <= 0) return;
+
+        const montoFinanciado = precio - enganche;
+        const tasaMensual = tasaAnual / 100 / 12;
+
+        // Cálculo de pago mensual (fórmula PMT)
+        let pagoMensual = 0;
+        if (tasaMensual > 0) {
+          pagoMensual = montoFinanciado * (tasaMensual * Math.pow(1 + tasaMensual, meses)) / (Math.pow(1 + tasaMensual, meses) - 1);
+        } else {
+          pagoMensual = montoFinanciado / meses;
+        }
+
+        const totalPagos = pagoMensual * meses;
+        const totalIntereses = totalPagos - montoFinanciado;
+        const costoTotal = precio + totalIntereses;
+
+        // Actualizar resultados
+        this.updateResults({
+          pagoMensual,
+          pagoConSeguro: pagoMensual + seguro,
+          montoFinanciado,
+          totalIntereses,
+          totalPagar: totalPagos,
+          costoTotal,
+          precio,
+          enganche,
+          meses,
+          tasaAnual
+        });
+
+        // Generar consejos
+        this.generateTips({pagoMensual, precio, enganche, meses, tasaAnual});
+
+        // Generar comparaciones
+        this.generateComparisons({precio, meses, tasaAnual});
+
+        // Mostrar tabla de amortización
+        document.getElementById('tablaAmortizacion').style.display = 'block';
+      }
+
+      updateResults(data) {
+        document.getElementById('pagoMensual').textContent = this.formatCurrency(data.pagoConSeguro);
+        document.getElementById('pagoSinSeguro').textContent = this.formatCurrency(data.pagoMensual);
+        document.getElementById('montoFinanciado').textContent = this.formatCurrency(data.montoFinanciado);
+        document.getElementById('totalIntereses').textContent = this.formatCurrency(data.totalIntereses);
+        document.getElementById('totalPagar').textContent = this.formatCurrency(data.totalPagar);
+        document.getElementById('costoTotal').textContent = this.formatCurrency(data.costoTotal);
+      }
+
+      generateTips(data) {
+        const tips = [];
+        const porcentajeEnganche = (parseFloat(document.getElementById('enganche').value) / data.precio) * 100;
+
+        if (porcentajeEnganche < 20) {
+          tips.push('💡 Considera aumentar el enganche al 20% para reducir intereses');
+        }
+        if (data.meses > 60) {
+          tips.push('⏰ Plazos largos generan más intereses, considera reducir el plazo');
+        }
+        if (data.tasaAnual > 10) {
+          tips.push('🏦 Compara tasas en diferentes instituciones financieras');
+        }
+        if (data.pagoMensual > data.precio * 0.15) {
+          tips.push('⚠️ El pago representa más del 15% del precio del auto');
+        }
+
+        tips.push('✅ Recuerda incluir gastos de escrituración, placas y verificación');
+        tips.push('🛡️ El seguro es obligatorio para financiamientos');
+
+        document.getElementById('consejos').innerHTML = '<ul>' + tips.map(tip => `<li>${tip}</li>`).join('') + '</ul>';
+      }
+
+      generateComparisons(data) {
+        // Escenario conservador (enganche 30%, 48 meses)
+        const conservador = this.calculateScenario(data.precio, data.precio * 0.3, 48, data.tasaAnual);
+        document.getElementById('conservador').innerHTML = this.formatScenario(conservador);
+
+        // Escenario balanceado (enganche 20%, 60 meses)
+        const balanceado = this.calculateScenario(data.precio, data.precio * 0.2, 60, data.tasaAnual);
+        document.getElementById('balanceado').innerHTML = this.formatScenario(balanceado);
+
+        // Escenario agresivo (enganche 10%, 72 meses)
+        const agresivo = this.calculateScenario(data.precio, data.precio * 0.1, 72, data.tasaAnual);
+        document.getElementById('agresivo').innerHTML = this.formatScenario(agresivo);
+      }
+
+      calculateScenario(precio, enganche, meses, tasaAnual) {
+        const montoFinanciado = precio - enganche;
+        const tasaMensual = tasaAnual / 100 / 12;
+
+        let pagoMensual = 0;
+        if (tasaMensual > 0) {
+          pagoMensual = montoFinanciado * (tasaMensual * Math.pow(1 + tasaMensual, meses)) / (Math.pow(1 + tasaMensual, meses) - 1);
+        } else {
+          pagoMensual = montoFinanciado / meses;
+        }
+
+        const totalIntereses = (pagoMensual * meses) - montoFinanciado;
+
+        return {
+          enganche,
+          pagoMensual,
+          totalIntereses,
+          meses
+        };
+      }
+
+      formatScenario(scenario) {
+        return `
+          <div class="scenario-item">
+            <span>Enganche:</span>
+            <span>${this.formatCurrency(scenario.enganche)}</span>
+          </div>
+          <div class="scenario-item">
+            <span>Pago mensual:</span>
+            <span>${this.formatCurrency(scenario.pagoMensual)}</span>
+          </div>
+          <div class="scenario-item">
+            <span>Total intereses:</span>
+            <span>${this.formatCurrency(scenario.totalIntereses)}</span>
+          </div>
+          <div class="scenario-item">
+            <span>Plazo:</span>
+            <span>${scenario.meses} meses</span>
+          </div>
+        `;
+      }
+
+      toggleAmortization() {
+        const table = document.getElementById('amortizationTable');
+        const tbody = document.getElementById('amortizationBody');
+        const btn = document.getElementById('toggleTabla');
+
+        if (tbody.children.length === 0) {
+          this.generateAmortizationTable();
+          btn.textContent = 'Ocultar tabla';
+        } else {
+          tbody.innerHTML = '';
+          btn.textContent = 'Ver tabla completa';
+        }
+      }
+
+      generateAmortizationTable() {
+        const precio = parseFloat(document.getElementById('precioAuto').value) || 0;
+        const enganche = parseFloat(document.getElementById('enganche').value) || 0;
+        const meses = parseInt(document.getElementById('plazoMeses').value) || 36;
+        const tasaAnual = parseFloat(document.getElementById('tasaInteres').value) || 8.5;
+
+        const montoFinanciado = precio - enganche;
+        const tasaMensual = tasaAnual / 100 / 12;
+
+        let pagoMensual = 0;
+        if (tasaMensual > 0) {
+          pagoMensual = montoFinanciado * (tasaMensual * Math.pow(1 + tasaMensual, meses)) / (Math.pow(1 + tasaMensual, meses) - 1);
+        } else {
+          pagoMensual = montoFinanciado / meses;
+        }
+
+        let saldo = montoFinanciado;
+        const tbody = document.getElementById('amortizationBody');
+        tbody.innerHTML = '';
+
+        for (let i = 1; i <= meses; i++) {
+          const interesMes = saldo * tasaMensual;
+          const capitalMes = pagoMensual - interesMes;
+          saldo -= capitalMes;
+
+          const row = tbody.insertRow();
+          row.innerHTML = `
+            <td>${i}</td>
+            <td>${this.formatCurrency(pagoMensual)}</td>
+            <td>${this.formatCurrency(capitalMes)}</td>
+            <td>${this.formatCurrency(interesMes)}</td>
+            <td>${this.formatCurrency(Math.max(0, saldo))}</td>
+          `;
+
+          if (saldo <= 0) break;
+        }
+      }
+
+      formatCurrency(amount) {
+        return new Intl.NumberFormat('es-MX', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+        }).format(amount);
+      }
+    }
+
+    // Inicialización
+    function init(){
+      document.getElementById('year').textContent = new Date().getFullYear();
+      applyFilters();
+      renderCmp();
+
+      // Inicializar calculadora
+      new FinanceCalculator();
+    }
+    init();
+  </script>
+
+  <!-- Newsletter/Contacto (demo local) -->
+  <script>
+    const key = 'tm-leads';
+    function setLeads(arr){ localStorage.setItem(key, JSON.stringify(arr)); }
+    function getLeads(){ return JSON.parse(localStorage.getItem(key) || '[]'); }
+
+    document.getElementById('formNewsletter').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const email = document.getElementById('email');
+      const msg = document.getElementById('msg');
+      if(!email.checkValidity()){ msg.textContent = 'Ingresa un email válido.'; email.focus(); return; }
+      const list = getLeads(); list.push({type:'newsletter', email: email.value.trim(), at: Date.now()}); setLeads(list);
+      msg.textContent = '¡Gracias! Te hemos registrado (demo).';
+      document.getElementById('suscritos').textContent = (12340 + list.length).toLocaleString('es-MX');
+      track('lead', {source:'newsletter'});
+      email.value = '';
+    });
+
+    document.getElementById('formContacto').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const n = document.getElementById('nombre');
+      const m = document.getElementById('mensaje');
+      const out = document.getElementById('msgContacto');
+      if(!n.value.trim() || !m.value.trim()){ out.textContent = 'Completa todos los campos.'; return; }
+      const list = getLeads(); list.push({type:'contact', name:n.value.trim(), msg: m.value.trim(), at: Date.now()}); setLeads(list);
+      out.textContent = 'Recibido (demo). Te responderemos pronto.';
+      track('contact', {name:n.value.trim()});
+      n.value = ''; m.value = '';
+    });
+  </script>
+
+  <!-- Service Worker inline (cache básico) -->
+  <script>
+    if('serviceWorker' in navigator){
+      const swCode = `
+        const CACHE = 'tumotor-v1';
+        self.addEventListener('install', e=>{
+          e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./'])));
+        });
+        self.addEventListener('fetch', e=>{
+          e.respondWith((async()=>{
+            try{
+              const res = await fetch(e.request, {cache:'no-store'});
+              const c = await caches.open(CACHE); c.put(e.request, res.clone());
+              return res;
+            }catch(err){
+              const cached = await caches.match(e.request);
+              return cached || new Response('Offline', {status:503});
+            }
+          })());
+        });
+      `;
+      const blob = new Blob([swCode], {type:'text/javascript'});
+      const swURL = URL.createObjectURL(blob);
+      navigator.serviceWorker.register(swURL).catch(()=>{});
+    }
+  </script>
+</body>
+</html>
+
